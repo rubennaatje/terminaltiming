@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pkg": {
-    "assets":"./node_modules/blessed/usr/xterm"
+    "assets": "./node_modules/blessed/usr/xterm"
   },
   "author": "",
   "license": "ISC",

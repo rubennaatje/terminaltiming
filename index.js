@@ -47,7 +47,8 @@ var log = grid.set(1, 11, 5, 1, contrib.log,
 
 
 function getData(){
-  const options = {
+  var epoch = (new Date).getTime();
+  var options = {
     uri: 'https://storage.googleapis.com/fiawec-prod/assets/live/WEC/__data.json?_='+epoch,
     headers: {
         'User-Agent': 'Request-Promise'
@@ -96,11 +97,6 @@ function setListeners(){
 main();
 
 function main(){
-  var epoch = (new Date).getTime();
-  setInterval(function() {   
-    epoch = epoch + 3000;
-  }, 1000)
-
   setInterval(function() {
     getData();
   }, 5000);
@@ -110,4 +106,5 @@ function main(){
   }, 100);
 
   getData();
+  setListeners();
 }
